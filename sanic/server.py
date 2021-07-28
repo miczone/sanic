@@ -286,7 +286,8 @@ class HttpProtocol(asyncio.Protocol):
         """
         # Cause a call to connection_lost where further cleanup occurs
         if self.transport:
-            self.transport.close()
+            #self.transport.close()
+            self.transport.abort()
             self.transport = None
 
     # -------------------------------------------- #
